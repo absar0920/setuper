@@ -1,8 +1,10 @@
 #!/bin/bash
+set -a # to stop the script if any errors occurs
 
+sudo dpkg --configure -a # fix broken packages
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install -y curl wget git unzip neofetch ncdu htop base-devel
+sudo apt-get install -y curl wget git unzip neofetch ncdu htop nethogs 
 
 sudo apt-get install snapd -y
 

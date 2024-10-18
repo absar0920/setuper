@@ -1,4 +1,5 @@
 #!/bin/bash
+set -a # to stop the script if any errors occurs
 
 if [ "$REACT_NATIVE" == "true" -o "$OPTIONS" == "all" ]; then
     sudo apt install default-jre default-jdk -y
