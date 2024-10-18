@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ "$OS_TYPE" == "Ubuntu" ]; then
     bash scripts/installer/deb.sh

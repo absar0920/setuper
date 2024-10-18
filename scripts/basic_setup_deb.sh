@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 sudo dpkg --configure -a # fix broken packages
 sudo apt-get update -y
@@ -9,11 +10,12 @@ sudo apt-get install snapd -y
 
 sudo apt-get install python3 python3-pip python3-venv wine tmux -y
 
-sudo apt-get install nodejs npm yarn zoom rar p7zip openvpn -y
+sudo apt-get install nodejs npm yarn rar p7zip openvpn -y
 
 sudo apt-get install gparted -y
 
-sudo snap install vlc gimp slack
+sudo snap install vlc gimp slack zoom-client
+
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source ~/.bashrc
