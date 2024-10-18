@@ -2,34 +2,25 @@
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install -y curl wget git
+sudo apt-get install -y curl wget git unzip neofetch ncdu htop base-devel
 
 sudo apt-get install snapd -y
 
-sudo apt-get install python3 python3-pip python3-venv -y
+sudo apt-get install python3 python3-pip python3-venv wine tmux -y
 
-sudo apt-get install nodejs npm -y
+sudo apt-get install nodejs npm yarn zoom rar p7zip openvpn -y
 
-# vscode
-sudo snap install code --classic
+sudo apt-get install gparted -y
 
-if [ "$REACT_NATIVE" == "true" -o "$OPTIONS" == "all" ]; then
-    sudo apt install default-jre default-jdk -y
-    # android studio
-    sudo snap install android-studio --classic
-    sudo npm install -g react-native-cli
-fi
+sudo snap install vlc gimp slack
 
-if [ "$PYCHARM" == "true" -o "$OPTIONS" == "all" ]; then
-    sudo snap install pycharm-professional --classic
-fi
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
+nvm install node
+nvm use node
 
-if [ "$ZSH" == "true" -o "$MINE" == "true" ]; then
-    sudo apt-get install zsh -y
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
-# sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3"
-# sdkmanager --licenses
-# sdkmanager --update
-# sdkmanager --list
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip \
+&& cd ~/.local/share/fonts \
+&& unzip -o 0xProto.zip \
+&& rm 0xProto.zip \
+&& fc-cache -fv
