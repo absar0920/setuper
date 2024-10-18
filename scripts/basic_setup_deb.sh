@@ -1,5 +1,4 @@
 #!/bin/bash
-set -a # to stop the script if any errors occurs
 
 sudo dpkg --configure -a # fix broken packages
 sudo apt-get update -y

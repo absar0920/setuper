@@ -1,5 +1,4 @@
 #!/bin/bash
-set -a # to stop the script if any errors occurs
 
 HELP_MESSAGE="This script can be used to automate the boring part of setting up your own machine for development.\n\nThis script includes the setup for different development environments and utilities like:\n\n  - Android App <React Native>\n  - Shells <Zsh>\n  - IDEs <Pycharm, VS Code>\n  - Containers <Docker>\n  - Tools <Postman>\n  - Communication <WhatsApp>\n  - Privacy <Tor>\n\nUsage:\n  --react-native: for android app development\n  --zsh: for using ZSH as default\n  --all: to get all the development environments installed\n  --pycharm: to install Pycharm IDE\n  --code: to install Visual Studio Code\n  --docker: to install Docker\n  --postman: to install Postman\n  --whatsapp: to install WhatsApp\n  --tor: to install Tor Browser\n  --recommended: to install recommended tools\n  --me: custom setup\n  --mine: custom setup\n  --help: display this help message"
 
