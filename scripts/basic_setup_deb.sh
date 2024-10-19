@@ -4,13 +4,13 @@ set -e
 sudo dpkg --configure -a # fix broken packages
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install -y curl wget git unzip neofetch ncdu htop nethogs 
+sudo apt-get install -y curl wget git unzip neofetch ncdu htop nethogs build-essential feh fzf xclip
 
 sudo apt-get install snapd -y
 
 sudo apt-get install python3 python3-pip python3-venv wine tmux -y
 
-sudo apt-get install nodejs npm yarn rar p7zip openvpn -y
+sudo apt-get install nodejs npm yarn rar p7zip openvpn pnpm -y
 
 sudo apt-get install gparted -y
 

@@ -55,5 +55,7 @@ if [ "$MINE" == "true" ]; then
     nvm install 18.0.0
 
     sudo apt-get install aria2 -y
+
+    bash scripts/installer/my/script_deb.sh
 fi
 
