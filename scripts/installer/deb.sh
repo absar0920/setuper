@@ -43,6 +43,8 @@ if [ "$TOR" == "true" -o "$MINE" == "true" ]; then
 fi
 
 # TODO: pnpm and protonvpn
+npm install -g pnpm
+
 
 if [ "$MINE" == "true" ]; then
     echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections

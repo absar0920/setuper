@@ -20,7 +20,7 @@ source .env
 
 script_dir=`pwd`
 
-sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER bash $script_dir/scripts/programs/nvm.sh
+# sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER bash $script_dir/scripts/programs/nvm.sh
 
 wget -P /home/$MACHINE_USER/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip \
 && cd /home/$MACHINE_USER/.local/share/fonts \
