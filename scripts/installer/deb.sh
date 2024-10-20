@@ -45,7 +45,8 @@ fi
 # TODO: pnpm and protonvpn
 
 if [ "$MINE" == "true" ]; then
-    sudo apt-get install wireshark -y 
+    echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install wireshark -y
     sudo apt-get install curl -y
     sudo apt-get install speedtest-cli alsamixergui -y
     sudo apt-get install rustc cargo -y
