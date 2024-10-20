@@ -29,7 +29,7 @@ sudo apt install picom rofi -y
 sudo apt install alacritty -y
 
 # setup config files
-cp -r .config/* /home/$MACHINE_USER/.config/
+cp -r configs/* /home/$MACHINE_USER/.config/
 
 echo "xset r rate 300 50" >> /home/$MACHINE_USER/.zshrc
 echo "ZSH_THEME=\"agnoster\"" >> /home/$MACHINE_USER/.zshrc
