@@ -18,6 +18,8 @@ sudo snap install vlc gimp slack zoom-client
 
 source .env
 
+script_dir=`pwd`
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 echo 'export NVM_DIR="$HOME/.nvm"' >> /home/$MACHINE_USER/.bashrc
 echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> /home/$MACHINE_USER/.bashrc
@@ -31,5 +33,6 @@ wget -P /home/$MACHINE_USER/.local/share/fonts https://github.com/ryanoasis/nerd
 && unzip -o 0xProto.zip \
 && rm 0xProto.zip \
 && fc-cache -fv
+cd $script_dir
 
 bash scripts/installer/deb.sh
