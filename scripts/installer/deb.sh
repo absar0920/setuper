@@ -2,6 +2,8 @@
 
 set -e
 
+source ./setup_utils.sh "$@"
+
 if [ "$REACT_NATIVE" == "true" -o "$OPTIONS" == "all" ]; then
     sudo apt install default-jre default-jdk -y
     sudo snap install android-studio --classic
