@@ -14,14 +14,18 @@ sudo apt install zsh -y
 export RUNZSH=no
 export ZDOTDIR=/home/$MACHINE_USER
 sudo wget -O /tmp/ohmyzsh-install-script.sh https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sudo sed -i '/^  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"/,/^  esac/d' /tmp/ohmyzsh-install-script.sh
-sh /tmp/ohmyzsh-install-script.sh
-rm /tmp/ohmyzsh-install-script.sh
+sudo sed -i '/^  echo "${FMT_BLUE}Time to change your default shell to zsh:/,/^  esac/d' /tmp/ohmyzsh-install-script.sh
+sudo sed -i 's/^\(\s*\)chsh -s.*/\1echo "Skipping changing shell to zsh"/' /tmp/ohmyzsh-install-script.sh
+sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER sh /tmp/ohmyzsh-install-script.sh --unattended
+sudo rm /tmp/ohmyzsh-install-script.sh
 
 # install i3wm
 sudo apt install i3 -y
+echo "lightdm shared/default-x-display-manager select lightdm" | sudo debconf-set-selections
 sudo systemctl disable gdm
 sudo apt install lightdm -y
+sudo update-alternatives --set default x-display-manager /usr/bin/lightdm
+sudo update-alternatives --set x-session-manager /usr/bin/i3
 sudo systemctl enable lightdm
 sudo apt install picom rofi -y
 
@@ -39,6 +43,9 @@ sudo snap install aws-cli --classic
 if [ -f .env ]; then
     aws --profile default configure set aws_access_key_id $AWS_ACCESS_KEY_ID
     aws --profile default configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    mv ~/.aws/ /home/$MACHINE_USER/
+    sudo chown -R $MACHINE_USER:$MACHINE_USER /home/$MACHINE_USER/.aws
+    sudo chmod 600 /home/$MACHINE_USER/.aws/credentials /home/$MACHINE_USER/.aws/config
 else
     echo "Not Setupping Up the aws cli.env file not found!"
     exit 1
