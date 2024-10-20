@@ -31,3 +31,5 @@ wget -P /home/$MACHINE_USER/.local/share/fonts https://github.com/ryanoasis/nerd
 && unzip -o 0xProto.zip \
 && rm 0xProto.zip \
 && fc-cache -fv
+
+bash scripts/installer/deb.sh
