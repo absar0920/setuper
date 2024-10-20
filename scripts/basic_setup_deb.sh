@@ -20,14 +20,7 @@ source .env
 
 script_dir=`pwd`
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-echo 'export NVM_DIR="$HOME/.nvm"' >> /home/$MACHINE_USER/.bashrc
-echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> /home/$MACHINE_USER/.bashrc
-echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' >> /home/$MACHINE_USER/.bashrc
-mv /root/.nvm /home/$MACHINE_USER/
-source /home/$MACHINE_USER/.bashrc
-nvm install node
-nvm use node
+sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER bash $script_dir/scripts/programs/nvm.sh
 
 wget -P /home/$MACHINE_USER/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip \
 && cd /home/$MACHINE_USER/.local/share/fonts \

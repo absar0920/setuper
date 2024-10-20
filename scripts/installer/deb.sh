@@ -42,6 +42,8 @@ if [ "$TOR" == "true" -o "$MINE" == "true" ]; then
     sudo apt-get install tor torbrowser-launcher -y
 fi
 
+# TODO: pnpm and protonvpn
+
 if [ "$MINE" == "true" ]; then
     sudo apt-get install wireshark -y 
     sudo apt-get install curl -y
@@ -49,10 +51,6 @@ if [ "$MINE" == "true" ]; then
     sudo apt-get install rustc cargo -y
     sudo snap install obsidian --classic --dangerous
     sudo apt-get install obs-studio -y
-
-    # nodes
-    nvm install --lts
-    nvm install 18.0.0
 
     sudo apt-get install aria2 -y
 
