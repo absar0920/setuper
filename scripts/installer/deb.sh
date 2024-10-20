@@ -25,7 +25,7 @@ fi
 
 if [ "$DOCKER" == "true" -o "$OPTIONS" == "all" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" ]; then
     sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-    sudo apt install docker.io docker-compose docker -y
+    sudo apt install docker.io docker-compose -y
     sudo usermod -aG docker $USER
 fi
 
@@ -46,7 +46,7 @@ if [ "$MINE" == "true" ]; then
     sudo apt-get install wireshark -y 
     sudo apt-get install curl -y
     curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
-    sudo apt-get install speedtest alsamixergui -y
+    sudo apt-get install speedtest-cli alsamixergui -y
     sudo apt-get install rustc rust-doc cargo rustup -y
     sudo snap install obsidian --classic --dangerous
     sudo apt-get install obs-studio -y
