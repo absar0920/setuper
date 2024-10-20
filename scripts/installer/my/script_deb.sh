@@ -13,8 +13,8 @@ fi
 sudo apt install zsh -y
 export RUNZSH=no
 export ZDOTDIR=/home/$MACHINE_USER
-wget -O /tmp/ohmyzsh-install-script.sh https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sed -i '/^  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"/,/^  esac/d' /tmp/ohmyzsh-install-script.sh
+sudo wget -O /tmp/ohmyzsh-install-script.sh https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+sudo sed -i '/^  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"/,/^  esac/d' /tmp/ohmyzsh-install-script.sh
 sh /tmp/ohmyzsh-install-script.sh
 rm /tmp/ohmyzsh-install-script.sh
 
@@ -37,8 +37,8 @@ echo "ZSH_THEME=\"agnoster\"" >> /home/$MACHINE_USER/.zshrc
 # setup aws
 sudo snap install aws-cli --classic
 if [ -f .env ]; then
-    aws configure --profile default configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-    aws configure --profile default configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    aws --profile default configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    aws --profile default configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
 else
     echo "Not Setupping Up the aws cli.env file not found!"
     exit 1
