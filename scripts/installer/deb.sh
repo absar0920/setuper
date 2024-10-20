@@ -47,7 +47,7 @@ if [ "$MINE" == "true" ]; then
     sudo apt-get install curl -y
     curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
     sudo apt-get install speedtest-cli alsamixergui -y
-    sudo apt-get install rustc rust-doc cargo rustup -y
+    sudo apt-get install rustc cargo -y
     sudo snap install obsidian --classic --dangerous
     sudo apt-get install obs-studio -y
 

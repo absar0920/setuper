@@ -11,6 +11,8 @@ fi
 # ubuntu
 # install zsh and oh-my-zsh
 sudo apt install zsh -y
+export RUNZSH=no
+export ZDOTDIR=/home/$MACHINE_USER
 wget -O /tmp/ohmyzsh-install-script.sh https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 sed -i '/^  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"/,/^  esac/d' /tmp/ohmyzsh-install-script.sh
 sh /tmp/ohmyzsh-install-script.sh
@@ -18,7 +20,7 @@ rm /tmp/ohmyzsh-install-script.sh
 
 # install i3wm
 sudo apt install i3 -y
-sudo systemctl stop gdm
+sudo systemctl disable gdm
 sudo apt install lightdm -y
 sudo systemctl enable lightdm
 sudo apt install picom rofi -y
