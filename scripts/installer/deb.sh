@@ -17,7 +17,6 @@ fi
 
 if [ "$ZSH" == "true" -o "$MINE" == "true" ]; then
     sudo apt-get install zsh -y
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 if [ "$CODE" == "true" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" -o "$OPTIONS" == "all" ]; then
