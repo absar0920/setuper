@@ -14,7 +14,11 @@ sudo apt-get install nodejs npm yarn rar p7zip openvpn -y
 
 sudo apt-get install gparted -y
 
-sudo snap install vlc gimp slack zoom-client
+sudo apt-get install gimp vlc -y
+wget https://downloads.slack-edge.com/desktop-releases/linux/x64/4.38.125/slack-desktop-4.38.125-amd64.deb
+sudo apt install ./slack-desktop-4.38.125-amd64.deb -y && rm slack-desktop-4.38.125-amd64.deb
+wget https://zoom.us/client/6.2.3.2056/zoom_amd64.deb
+sudo apt install ./zoom_amd64.deb -y && rm zoom_amd64.deb
 
 source .env
 

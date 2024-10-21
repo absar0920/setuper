@@ -52,7 +52,7 @@ if [ "$MINE" == "true" ]; then
     sudo apt-get install curl -y
     sudo apt-get install speedtest-cli alsamixergui -y
     sudo apt-get install rustc cargo -y
-    sudo snap install obsidian --classic --dangerous
+    sudo snap install obsidian --classic
     sudo apt-get install obs-studio -y
 
     sudo apt-get install aria2 -y
