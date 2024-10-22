@@ -23,9 +23,9 @@ sudo chsh -s /bin/zsh $MACHINE_USER
 # install i3wm
 sudo apt install i3 -y
 echo "lightdm shared/default-x-display-manager select lightdm" | sudo debconf-set-selections
-sudo systemctl disable gdm
-sudo DEBIAN_FRONTEND=noninteractive apt install lightdm -y
-sudo systemctl enable lightdm
+# sudo systemctl disable gdm
+# sudo DEBIAN_FRONTEND=noninteractive apt install lightdm -y
+# sudo systemctl enable lightdm
 sudo apt install picom rofi -y
 
 # install alacritty
