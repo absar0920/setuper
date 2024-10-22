@@ -18,6 +18,7 @@ sudo sed -i '/^  echo "${FMT_BLUE}Time to change your default shell to zsh:/,/^ 
 # sudo sed -i 's/^\(\s*\)chsh -s.*/\1echo "Skipping changing shell to zsh"/' /tmp/ohmyzsh-install-script.sh
 sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER sh /tmp/ohmyzsh-install-script.sh --unattended
 sudo rm /tmp/ohmyzsh-install-script.sh
+sudo chsh -s /bin/zsh $MACHINE_USER
 
 # install i3wm
 sudo apt install i3 -y
@@ -33,7 +34,7 @@ sudo apt install alacritty -y
 # setup config files
 cp -r configs/* /home/$MACHINE_USER/.config/
 
-echo "xset r rate 300 50" >> /home/$MACHINE_USER/.zshrc
+echo "xset r rate 250 50" >> /home/$MACHINE_USER/.zshrc
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' /home/$MACHINE_USER/.zshrc
 
 # setup aws
