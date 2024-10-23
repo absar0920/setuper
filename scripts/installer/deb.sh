@@ -20,6 +20,7 @@ if [ "$ZSH" == "true" -o "$MINE" == "true" ]; then
 fi
 
 if [ "$CODE" == "true" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" -o "$OPTIONS" == "all" ]; then
+    echo "INSTALLING VSCODE..."
     sudo snap install code --classic
 fi
 
@@ -30,10 +31,12 @@ if [ "$DOCKER" == "true" -o "$OPTIONS" == "all" -o "$MINE" == "true" -o "$RECOMM
 fi
 
 if [ "$POSTMAN" == "true" -o "$OPTIONS" == "all" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" ]; then
+    echo "INSTALLING POSTMAN..."
     sudo snap install postman
 fi
 
 if [ "$MINE" == "true" -o "$WHATSAPP" == "true" -o "$RECOMMENDED" == "true" -o "$OPTIONS" == "all" ]; then
+    echo "INSTALLING WHATSAPP..."
     sudo snap install whatsie
     sudo snap install whatsdesk
 fi
