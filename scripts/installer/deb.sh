@@ -45,7 +45,7 @@ if [ "$TOR" == "true" -o "$MINE" == "true" ]; then
     sudo apt-get install tor torbrowser-launcher -y
 fi
 
-# TODO: pnpm and protonvpn
+# TODO: pnpm
 npm install -g pnpm
 
 
@@ -68,7 +68,7 @@ if [ "$MINE" == "true" ]; then
     sudo sh -c 'echo "deb [arch=amd64] https://deb.opera.com/opera-stable/ stable non-free" > /etc/apt/sources.list.d/opera.list'
     wget -O - https://deb.opera.com/archive.key | sudo apt-key add -
     sudo apt-get update -y
-    sudo apt-get install opera-stable -y
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install opera-stable -y
     sudo snap install vivaldi
 
     bash scripts/installer/my/script_deb.sh

@@ -22,22 +22,22 @@ sudo apt install ./zoom_amd64.deb -y && rm zoom_amd64.deb
 
 source .env
 
-script_dir=`pwd`
+script_dir=$(pwd)
 
 # sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER bash $script_dir/scripts/programs/nvm.sh
 
-    # browser 
-    sudo apt-get install firefox -y
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
-    sudo apt install /tmp/chrome.deb -y && rm /tmp/chrome.deb
-    sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-    echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-    sudo apt update -y
-    sudo apt install brave-browser -y
+# browser
+sudo apt-get install firefox -y
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
+sudo apt install /tmp/chrome.deb -y && rm /tmp/chrome.deb
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update -y
+sudo apt install brave-browser -y
 
-wget -P /home/$MACHINE_USER/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip \
-&& cd /home/$MACHINE_USER/.local/share/fonts \
-&& unzip -o 0xProto.zip \
-&& rm 0xProto.zip \
-&& fc-cache -fv
+wget -P /home/$MACHINE_USER/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip &&
+    cd /home/$MACHINE_USER/.local/share/fonts &&
+    unzip -o 0xProto.zip &&
+    rm 0xProto.zip &&
+    fc-cache -fv
 cd $script_dir
