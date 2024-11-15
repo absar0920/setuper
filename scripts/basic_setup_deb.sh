@@ -20,6 +20,15 @@ sudo apt install ./slack-desktop-4.38.125-amd64.deb -y && rm slack-desktop-4.38.
 wget https://zoom.us/client/6.2.3.2056/zoom_amd64.deb
 sudo apt install ./zoom_amd64.deb -y && rm zoom_amd64.deb
 
+# linux wifi hotspot
+sudo apt install -y libgtk-3-dev build-essential gcc g++ pkg-config make hostapd libqrencode-dev libpng-dev -y
+git clone https://github.com/lakinduakash/linux-wifi-hotspot
+cd linux-wifi-hotspot
+make
+sudo make install
+cd ..
+rm -rf linux-wifi-hotspot
+
 source .env
 
 script_dir=$(pwd)
