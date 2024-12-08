@@ -31,8 +31,9 @@ sudo apt install picom rofi -y
 # install alacritty
 sudo apt install alacritty -y
 
-# setup config files
-cp -r configs/* /home/$MACHINE_USER/.config/
+# setup config files, from $MACHINE_USER to avoid the ownership issues
+sudo -u $MACHINE_USER mkdir -p /home/$MACHINE_USER/.config
+sudo -u $MACHINE_USER cp -r ./config/* /home/$MACHINE_USER/.config
 
 echo "xset r rate 250 50" >> /home/$MACHINE_USER/.zshrc
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' /home/$MACHINE_USER/.zshrc
@@ -51,9 +52,9 @@ else
     exit 1
 fi
 
-# setup git
-git config --global user.email $GIT_EMAIL
-git config --global user.name $GIT_NAME
+# setup git, but the default user is root, how can we setup the git config for the MACHINE_USER
+sudo -u $MACHINE_USER git config --global user.email $GIT_EMAIL
+sudo -u $MACHINE_USER git config --global user.name $GIT_NAME
 ssh-keygen -t rsa -b 4096 -C $GIT_EMAIL -f /home/$MACHINE_USER/.ssh/id_rsa -N ""
 eval "$(ssh-agent -s)"
 ssh-add /home/$MACHINE_USER/.ssh/id_rsa
