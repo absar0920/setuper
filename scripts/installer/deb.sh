@@ -6,12 +6,12 @@ source ./setup_utils.sh "$@"
 
 if [ "$REACT_NATIVE" == "true" -o "$OPTIONS" == "all" ]; then
     sudo apt install default-jre default-jdk -y
-    sudo snap install android-studio --classic
+#    sudo snap install android-studio --classic
     sudo npm install -g react-native-cli
 fi
 
 if [ "$PYCHARM" == "true" -o "$OPTIONS" == "all" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" ]; then
-    sudo snap install pycharm-professional --classic
+#    sudo snap install pycharm-professional --classic
     sudo apt install postgresql -y
 fi
 
@@ -21,7 +21,7 @@ fi
 
 if [ "$CODE" == "true" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" -o "$OPTIONS" == "all" ]; then
     echo "INSTALLING VSCODE..."
-    sudo snap install code --classic
+#    sudo snap install code --classic
 fi
 
 if [ "$DOCKER" == "true" -o "$OPTIONS" == "all" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" ]; then
@@ -32,13 +32,13 @@ fi
 
 if [ "$POSTMAN" == "true" -o "$OPTIONS" == "all" -o "$MINE" == "true" -o "$RECOMMENDED" == "true" ]; then
     echo "INSTALLING POSTMAN..."
-    sudo snap install postman
+#    sudo snap install postman
 fi
 
 if [ "$MINE" == "true" -o "$WHATSAPP" == "true" -o "$RECOMMENDED" == "true" -o "$OPTIONS" == "all" ]; then
     echo "INSTALLING WHATSAPP..."
-    sudo snap install whatsie
-    sudo snap install whatsdesk
+#    sudo snap install whatsie
+#    sudo snap install whatsdesk
 fi
 
 if [ "$TOR" == "true" -o "$MINE" == "true" ]; then
@@ -55,7 +55,7 @@ if [ "$MINE" == "true" ]; then
     sudo apt-get install curl -y
     sudo apt-get install speedtest-cli alsamixergui -y
     sudo apt-get install rustc cargo golang -y
-    sudo snap install obsidian --classic
+#    sudo snap install obsidian --classic
     sudo apt-get install obs-studio -y
 
     sudo apt-get install aria2 -y
@@ -69,7 +69,7 @@ if [ "$MINE" == "true" ]; then
     wget -O - https://deb.opera.com/archive.key | sudo apt-key add -
     sudo apt-get update -y
     sudo DEBIAN_FRONTEND=noninteractive apt-get install opera-stable -y
-    sudo snap install vivaldi
+#    sudo snap install vivaldi
 
     bash scripts/installer/my/script_deb.sh
 fi
