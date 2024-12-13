@@ -210,3 +210,4 @@ bindsym $mod+e layout toggle split
 bindsym $mod+h split h
 bindsym $mod+v split v
 
+exec_always feh --bg-scale ~/.config/i3/wallpaper.jpg
