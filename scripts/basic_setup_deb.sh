@@ -20,22 +20,25 @@ sudo apt install ./slack-desktop-4.38.125-amd64.deb -y && rm slack-desktop-4.38.
 wget https://zoom.us/client/6.2.3.2056/zoom_amd64.deb
 sudo apt install ./zoom_amd64.deb -y && rm zoom_amd64.deb
 
-linux wifi hotspot
+script_dir=$(pwd)
+
+# linux wifi hotspot
 sudo apt install -y libgtk-3-dev build-essential gcc g++ pkg-config make hostapd libqrencode-dev libpng-dev -y
-git clone https://github.com/lakinduakash/linux-wifi-hotspot
-cd linux-wifi-hotspot
+git clone https://github.com/lakinduakash/linux-wifi-hotspot /tmp/linux-wifi-hotspot
+cd /tmp/linux-wifi-hotspot
 make
 sudo make install
 cd ..
 rm -rf linux-wifi-hotspot
-
-source .env
+cd $script_dir
 
 script_dir=$(pwd)
 
-sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER bash $script_dir/scripts/programs/nvm.sh
+source .env
 
-browser
+# sudo -u $MACHINE_USER HOME=/home/$MACHINE_USER USER=$MACHINE_USER bash $script_dir/scripts/programs/nvm.sh
+
+# browser
 sudo apt-get install firefox -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
 sudo apt install /tmp/chrome.deb -y && rm /tmp/chrome.deb
