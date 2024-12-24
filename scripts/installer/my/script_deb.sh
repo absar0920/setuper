@@ -33,7 +33,7 @@ sudo apt install alacritty -y
 
 # setup config files, from $MACHINE_USER to avoid the ownership issues
 sudo -u $MACHINE_USER mkdir -p /home/$MACHINE_USER/.config
-sudo -u $MACHINE_USER cp -r ./config/* /home/$MACHINE_USER/.config
+sudo -u $MACHINE_USER cp -r ./configs/* /home/$MACHINE_USER/.config
 
 echo "xset r rate 250 50" >> /home/$MACHINE_USER/.zshrc
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/' /home/$MACHINE_USER/.zshrc
