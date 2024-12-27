@@ -52,6 +52,12 @@ else
     exit 1
 fi
 
+# setup tmux-sessionizer
+sudo -u $MACHINE_USER mkdir -p /home/$MACHINE_USER/.local/bin
+sudo -u $MACHINE_USER cp ./tools/tmux-sessionizer /home/$MACHINE_USER/.local/bin
+sudo -u $MACHINE_USER chmod +x /home/$MACHINE_USER/.local/bin/tmux-sessionizer
+echo "export PATH=$PATH:/home/$MACHINE_USER/.local/bin" >> /home/$MACHINE_USER/.zshrc
+
 # setup git, but the default user is root, how can we setup the git config for the MACHINE_USER
 sudo -u $MACHINE_USER git config --global user.email $GIT_EMAIL
 sudo -u $MACHINE_USER git config --global user.name $GIT_NAME
