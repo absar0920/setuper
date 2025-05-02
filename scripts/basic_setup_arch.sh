@@ -8,7 +8,7 @@ script_dir=$(pwd)
 source .env
 
 # Install snapd
-git clone https://aur.archlinux.org/snapd.git /tmp/snapd
+sudo -u $MACHINE_USER git clone https://aur.archlinux.org/snapd.git /tmp/snapd
 cd /tmp/snapd
 sudo -u $MACHINE_USER makepkg -si --noconfirm
 cd $script_dir
@@ -25,7 +25,7 @@ sudo pacman -S --noconfirm gparted
 sudo pacman -S --noconfirm gimp vlc
 
 # install yay
-git clone https://aur.archlinux.org/yay.git /tmp/yay
+sudo -u $MACHINE_USER git clone https://aur.archlinux.org/yay.git /tmp/yay
 cd /tmp/yay
 sudo -u $MACHINE_USER makepkg -si --noconfirm
 cd ..
@@ -41,7 +41,7 @@ yay -S --noconfirm zoom
 
 # Linux WiFi Hotspot
 sudo pacman -S --noconfirm gtk3 base-devel gcc pkgconf make hostapd qrencode libpng
-git clone https://github.com/lakinduakash/linux-wifi-hotspot /tmp/linux-wifi-hotspot
+sudo -u $MACHINE_USER git clone https://github.com/lakinduakash/linux-wifi-hotspot /tmp/linux-wifi-hotspot
 cd /tmp/linux-wifi-hotspot
 make
 sudo make install
