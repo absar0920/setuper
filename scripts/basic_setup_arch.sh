@@ -33,10 +33,10 @@ rm -rf yay
 cd $script_dir
 
 # Install Slack (AUR)
-sudo -u $MACHINE_USER yay -S--noconfirm slack-desktop
+sudo -u $MACHINE_USER yay -S --noconfirm slack-desktop
 
 # Install Zoom (AUR)
-sudo -u $MACHINE_USER yay -S--noconfirm zoom
+sudo -u $MACHINE_USER yay -S --noconfirm zoom
 
 
 # Linux WiFi Hotspot
@@ -55,8 +55,8 @@ source .env
 
 # Browser installations
 sudo pacman -S --noconfirm firefox
-sudo -u $MACHINE_USER yay -S--noconfirm google-chrome
-sudo -u $MACHINE_USER yay -S--noconfirm brave-bin
+sudo -u $MACHINE_USER yay -S --noconfirm google-chrome
+sudo -u $MACHINE_USER yay -S --noconfirm brave-bin
 
 # Install Nerd Fonts
 wget -P /home/$MACHINE_USER/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip &&
