@@ -2,7 +2,7 @@
 set -e
 
 sudo pacman -Syu --noconfirm # Update system and packages
-sudo pacman -S --noconfirm curl wget git unzip neofetch ncdu htop nethogs base-devel feh fzf xclip
+sudo pacman -S --noconfirm curl wget git unzip neofetch ncdu htop nethogs base-devel feh fzf xclip playerctl xorg-xbacklight brightnessctl scrot flameshot xorg-xinput
 
 script_dir=$(pwd)
 source .env

@@ -211,3 +211,32 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 exec_always feh --bg-scale ~/.config/i3/wallpaper.jpg
+
+# Volume control
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+    # Increase volume
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-    # Decrease volume
+bindsym XF86AudioMute exec amixer set Master toggle         # Mute/unmute
+
+# Play/Pause music (optional, if you want to control media player)
+bindsym XF86AudioPlay exec playerctl play-pause
+
+# Increase brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+
+# Decrease brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# Increase brightness
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+
+# Decrease brightness
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+bindsym $mod+Shift+s exec --no-startup-id scrot -s ~/Pictures/screenshot_%Y-%m-%d-%H%M%S.png
+
+bindsym $mod+Ctrl+v exec --no-startup-id flameshot gui
+
+exec --no-startup-id xinput set-prop "DELL09A0:00 0488:121F Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "DELL09A0:00 0488:121F Touchpad" "libinput Natural Scrolling Enabled" 1
+
+bindsym $mod+Shift+J exec flameshot gui
