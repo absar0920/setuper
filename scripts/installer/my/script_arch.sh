@@ -67,7 +67,7 @@ curl -L \
   -H "Authorization: Bearer $GITHUB_API_TOKEN" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/user/keys \
-  -d "{\"title\":\"H: $(hostname) U: $MACHINE_USER\",\"key\":\"$pub\"}"
+  -d "{\"title\":\"H: $(hostnamectl --static) U: $MACHINE_USER\",\"key\":\"$pub\"}"
 # Setting up permissions
 sudo chown -R $MACHINE_USER:$MACHINE_USER /home/$MACHINE_USER/.ssh/id_rsa /home/$MACHINE_USER/.ssh/id_rsa.pub
 sudo chmod 600 /home/$MACHINE_USER/.ssh/id_rsa
