@@ -8,12 +8,16 @@ script_dir=$(pwd)
 source .env
 
 # Install snapd
-sudo pacman -S --noconfirm snapd # not working
+git clone https://aur.archlinux.org/snapd.git /tmp/snapd
+cd /tmp/snapd
+sudo -u $MACHINE_USER makepkg -si --noconfirm
+cd $script_dir
+rm -rf /tmp/snapd
 sudo systemctl enable --now snapd.socket # not working
 
 sudo pacman -S --noconfirm python python-pip python-virtualenv tmux
 
-wine # not working
+# wine # not working
 sudo pacman -S --noconfirm nodejs npm yarn unrar p7zip openvpn
 
 sudo pacman -S --noconfirm gparted
